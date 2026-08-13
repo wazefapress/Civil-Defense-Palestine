@@ -183,9 +183,9 @@
     
     <div class="d-flex align-items-center gap-2">
       <!-- زر تثبيت التطبيق -->
-      <button id="installAppBtn" class="btn btn-warning text-dark rounded-circle border-0 d-none p-0 d-inline-flex align-items-center justify-content-center" title="تثبيت التطبيق" aria-label="تثبيت التطبيق" style="width: 36px; height: 36px;">
-        <i class="bi bi-download fs-5"></i>
-      </button>
+    <button id="installAppBtn" class="btn btn-warning text-dark rounded-circle border-0 p-0 align-items-center justify-content-center" title="تثبيت التطبيق" aria-label="تثبيت التطبيق" style="display: none; width: 36px; height: 36px;">
+  <i class="bi bi-download fs-5"></i>
+</button>
 
       <!-- زر الوضع الليلي -->
       <button id="themeToggleBtn" class="btn btn-outline-light border-0 rounded-circle p-0 d-inline-flex align-items-center justify-content-center" title="تبديل الوضع الليلي" style="width: 36px; height: 36px;">
@@ -532,10 +532,11 @@ installAppBtn.addEventListener('click', async () => {
 });
 
 // 3. إخفاء الزر فور إتمام التثبيت بنجاح
-window.addEventListener('appinstalled', () => {
-  console.log('تم تثبيت تطبيق الإسعافات بنجاح!');
-  installAppBtn.classList.add('d-none');
-  deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // عرض الزر برمجياً بدون تعارض فئات Bootstrap
+  installAppBtn.style.display = 'inline-flex'; 
 });
   </script>
 </body>

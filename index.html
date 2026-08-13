@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>دليل طوارئ والسلامة العامة | الدفاع المدني 102</title>
+  <!-- ==================== SEO الأساسي ==================== -->
+<meta name="description" content="دليل تفاعلي للتعامل مع طوارئ الدفاع المدني: الحرائق، تسرب الغاز، احتجاز المصاعد والسيول. يعمل بدون إنترنت.">
+<meta name="keywords" content="الدفاع المدني, 102, إخلاء, حرائق, تسرب غاز, طوارئ, سيول, فلسطين">
+  
+
+
+  <meta name="author" content="هيثم زيدان">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://your-domain.com/">
+
+  <!-- ==================== SEO وسائل التواصل (Open Graph / WhatsApp / Facebook) ==================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/">
+  <meta property="og:title" content="دليل الإسعافات الأولية الطارئة - استجابة سريعة للإنقاذ">
+  <meta property="og:description" content="دليل تفاعلي وسريع للإسعافات الأولية باللغة العربية يعمل بدون إنترنت. اتصل بالطوارئ واقرأ خطوات الإنقاذ فوراً.">
+  <meta property="og:image" content="https://your-domain.com/icons/og-image.png">
+  <meta property="og:site_name" content="الإسعافات الأولية">
+  <meta property="og:locale" content="ar_PS">
+
+  <!-- ==================== Twitter Cards SEO ==================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://your-domain.com/">
+  <meta name="twitter:title" content="دليل الإسعافات الأولية الطارئة">
+  <meta name="twitter:description" content="دليل تفاعلي وسريع للإسعافات الأولية يعمل بدون إنترنت مع أرقام الطوارئ المباشرة.">
+  <meta name="twitter:image" content="https://your-domain.com/icons/og-image.png">
+
+  <!-- ==================== Structured Data (Schema.org JSON-LD) ==================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "دليل الإسعافات الأولية الطارئة",
+    "url": "https://your-domain.com/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "inLanguage": "ar",
+    "description": "تطبيق محمول للتعامل السريع مع حالات الطوارئ والإسعافات الأولية بدون اتصال بالإنترنت.",
+    "author": {
+      "@type": "Person",
+      "name": "هيثم زيدان"
+    }
+  }
+  </script>
+
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#dc3545">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="إسعافات">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- Bootstrap 5.3 RTL CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Tajawal Arabic Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==================== تنسيقات الشاشة بدون تمرير خارجي ==================== */
+    html, body {
+      height: 100dvh; /* Dynamic Viewport Height لتوافق الهواتف */
+      max-height: 100dvh;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* منع التمرير على مستوى الصفحة بالكامل */
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* أجزاء ثابتة لا تتتقلص */
+    .emergency-bar, header, footer {
+      flex-shrink: 0;
+    }
+
+    .emergency-bar {
+      background-color: #dc3545;
+      color: white;
+      z-index: 1030;
+    }
+
+    /* منطقة العرض الرئيسية قابلة للتمرير الداخلي فقط عند الحاجة */
+    main {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch; /* تمرير سلس للآيفون */
+    }
+
+    /* تخصيص شريط التمرير الداخلي ليكون أنيقاً */
+    main::-webkit-scrollbar {
+      width: 6px;
+    }
+    main::-webkit-scrollbar-thumb {
+      background-color: rgba(0,0,0,0.15);
+      border-radius: 10px;
+    }
+
+    .card-case {
+      border: none;
+      border-radius: 16px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    .card-case:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .link-hover:hover {
+      text-decoration: underline !important;
+    }
+
+    /* ==================== Dark Mode CSS ==================== */
+    [data-bs-theme="dark"] body {
+      background-color: #121212 !important;
+    }
+    [data-bs-theme="dark"] header,
+    [data-bs-theme="dark"] footer {
+      background-color: #1e1e1e !important;
+      border-color: #2c2c2c !important;
+    }
+    [data-bs-theme="dark"] .card-case {
+      background-color: #1e1e1e;
+      color: #ffffff;
+      border: 1px solid #2d2d2d;
+    }
+    [data-bs-theme="dark"] .card-case:hover {
+      background-color: #252525;
+    }
+    [data-bs-theme="dark"] .modal-content {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+    [data-bs-theme="dark"] .input-group-text,
+    [data-bs-theme="dark"] #searchInput {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+    }
+    [data-bs-theme="dark"] footer .github-btn {
+      color: #f8f9fa;
+      border-color: #495057;
+    }
+    [data-bs-theme="dark"] footer .github-btn:hover {
+      background-color: #f8f9fa;
+      color: #121212;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. شريط الطوارئ والاتصال السريع (ثابت أعلى الشاشة) -->
+<!-- شريط الطوارئ العلوي -->
+<div class="emergency-bar py-2 px-3 shadow-sm bg-danger text-white">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="fw-bold fs-6 fs-md-5">
+      <i class="bi bi-shield-exclamation me-1 me-md-2"></i> طوارئ الدفاع المدني
+    </div>
+    
+    <div class="d-flex align-items-center gap-2">
+      <!-- زر تثبيت التطبيق -->
+      <button id="installAppBtn" class="btn btn-warning text-dark rounded-circle border-0 d-none p-0 d-inline-flex align-items-center justify-content-center" title="تثبيت التطبيق" aria-label="تثبيت التطبيق" style="width: 36px; height: 36px;">
+        <i class="bi bi-download fs-5"></i>
+      </button>
+
+      <!-- زر الوضع الليلي -->
+      <button id="themeToggleBtn" class="btn btn-outline-light border-0 rounded-circle p-0 d-inline-flex align-items-center justify-content-center" title="تبديل الوضع الليلي" style="width: 36px; height: 36px;">
+        <i class="bi bi-moon-stars-fill fs-5" id="themeIcon"></i>
+      </button>
+
+      <!-- زر الاتصال بالدفاع المدني -->
+      <a href="tel:102" class="btn btn-light text-danger fw-bold rounded-pill px-3 py-1 fs-6">
+        <i class="bi bi-telephone-fill me-1"></i> 102
+      </a>
+    </div>
+  </div>
+</div>
+
+  <!-- 2. الهيكل والبحث والفلترة (مدمج بمرونة) -->
+<header class="py-3 bg-white border-bottom">
+  <div class="container text-center">
+    <h1 class="fw-bold h4 mb-1 text-dark">دليل السلامة والطوارئ</h1>
+    <p class="text-muted small mb-2 d-none d-sm-block">إرشادات واستجابة سريعة لحالات الكوارث والإنقاذ</p>
+
+    <!-- أزرار التصنيف الجديدة -->
+    <div class="d-flex justify-content-center gap-1 gap-md-2 flex-wrap mb-2" id="categoryFilter">
+      <button class="btn btn-danger btn-sm rounded-pill px-2 px-md-3 active" data-category="all">
+        <i class="bi bi-grid-fill me-1"></i> الكل
+      </button>
+      <button class="btn btn-outline-danger btn-sm rounded-pill px-2 px-md-3" data-category="حرائق">
+        <i class="bi bi-fire me-1"></i> حرائق
+      </button>
+      <button class="btn btn-outline-danger btn-sm rounded-pill px-2 px-md-3" data-category="تسرب غاز">
+        <i class="bi bi-cloud-haze2-fill me-1"></i> غاز
+      </button>
+      <button class="btn btn-outline-danger btn-sm rounded-pill px-2 px-md-3" data-category="احتجاز">
+        <i class="bi bi-box-seam-fill me-1"></i> احتجاز
+      </button>
+      <button class="btn btn-outline-danger btn-sm rounded-pill px-2 px-md-3" data-category="سيول وكوارث">
+        <i class="bi bi-tsunami me-1"></i> كوارث
+      </button>
+    </div>
+  </div>
+</header>
+  <!-- 3. المنطقة الرئيسية للمحتوى (تتمدد وتستوعب التمرير الداخلي) -->
+  <main class="container">
+    <div class="row g-2 g-md-3" id="casesGrid">
+      <!-- يتم تحميل البطاقات ديناميكياً بواسطة JavaScript -->
+    </div>
+  </main>
+
+  <!-- 4. تذييل الصفحة (ثابت ومضمون العرض أسفل الشاشة بدون اقتصاص) -->
+  <footer class="bg-white border-top py-2 py-md-3">
+    <div class="container d-flex flex-row justify-content-between align-items-center gap-2">
+      
+      <!-- حقوق التطوير والتصميم -->
+      <div class="text-muted small text-start">
+        تصميم وتطوير &copy; 2026 | 
+        <a href="https://me.haythamzeidan.workers.dev/" target="_blank" rel="noopener noreferrer" class="text-danger text-decoration-none fw-bold link-hover">
+          هيثم زيدان <i class="bi bi-box-arrow-up-right ms-1"></i>
+        </a>
+      </div>
+
+      <!-- رابط GitHub الاحترافي -->
+      <div>
+        <a href="https://github.com/wazefapress/Civil-Defense-Palestine" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm rounded-pill px-2 px-md-3 py-1 d-inline-flex align-items-center gap-1 border-1 fw-medium github-btn">
+          <i class="bi bi-github fs-6"></i>
+          <span class="d-none d-sm-inline">GitHub</span>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Modal تفاصيل الحالة ومشاركتها -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 border-0 shadow">
+        
+        <div class="modal-header border-0 pb-0 d-flex justify-content-between align-items-center">
+          <h5 class="modal-title fw-bold fs-5" id="modalTitle">اسم الحالة</h5>
+          
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn btn-outline-success btn-sm rounded-pill px-3" onclick="shareCurrentCase()">
+              <i class="bi bi-share-fill me-1"></i> مشاركة
+            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+
+        <div class="modal-body py-3" id="modalBody">
+          <!-- تفاصيل الأعراض، الخطوات، والتحذيرات -->
+        </div>
+
+        <div class="modal-footer border-0 pt-0 d-flex justify-content-between">
+          <button type="button" class="btn btn-success rounded-pill px-3 btn-sm" onclick="shareToWhatsAppDirect()">
+            <i class="bi bi-whatsapp me-1"></i> واتساب
+          </button>
+          <button type="button" class="btn btn-secondary rounded-pill px-4 btn-sm" data-bs-dismiss="modal">إغلاق</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- التطبيق البرمجي المنفذ -->
+  <script>
+    let allCasesData = [];
+    let currentCategory = 'all';
+    let currentSearchTerm = '';
+    let activeCase = null;
+
+    const modal = new bootstrap.Modal(document.getElementById('detailModal'));
+
+    // تسجيل الـ Service Worker لتقنية PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then((reg) => console.log('Service Worker Registered:', reg.scope))
+          .catch((err) => console.error('Service Worker Failed:', err));
+      });
+    }
+
+    // إدارة الوضع الليلي
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+
+    function applyTheme(theme) {
+      htmlElement.setAttribute('data-bs-theme', theme);
+      localStorage.setItem('preferred-theme', theme);
+      if (theme === 'dark') {
+        themeIcon.className = 'bi bi-sun-fill fs-5 text-warning';
+      } else {
+        themeIcon.className = 'bi bi-moon-stars-fill fs-5 text-white';
+      }
+    }
+
+    const savedTheme = localStorage.getItem('preferred-theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    } else if (systemPrefersDark) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-bs-theme');
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // جلب البيانات
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('data.json')
+        .then(response => {
+          if (!response.ok) throw new Error("تعذر تحميل البيانات");
+          return response.json();
+        })
+        .then(data => {
+          allCasesData = data;
+          renderCases(allCasesData);
+          setupCategoryEvents();
+        })
+        .catch(error => {
+          console.error('خطأ:', error);
+          document.getElementById('casesGrid').innerHTML = `
+            <div class="col-12 text-center text-danger py-4">
+              <i class="bi bi-exclamation-triangle fs-2"></i>
+              <p class="mt-2 small">حدث خطأ أثناء تحميل بيانات الإسعافات الأولية.</p>
+            </div>`;
+        });
+    });
+
+    function renderCases(cases) {
+      const grid = document.getElementById('casesGrid');
+      grid.innerHTML = '';
+
+      if (cases.length === 0) {
+        grid.innerHTML = `
+          <div class="col-12 text-center text-muted py-4">
+            <i class="bi bi-search fs-2"></i>
+            <p class="mt-2 small">لم يتم العثور على نتائج تطابق بحثك.</p>
+          </div>`;
+        return;
+      }
+
+      cases.forEach(item => {
+        const col = document.createElement('div');
+        col.className = 'col-6 col-md-4 col-lg-3';
+        col.innerHTML = `
+          <div class="card card-case h-100 p-2 p-md-3 shadow-sm text-center" onclick="showDetails('${item.id}')">
+            <div class="icon-box bg-${item.badgeColor}-subtle text-${item.badgeColor} mx-auto mb-2">
+              <i class="bi ${item.icon}"></i>
+            </div>
+            <h5 class="fw-bold mb-1 fs-6">${item.title}</h5>
+            <span class="badge bg-${item.badgeColor}-subtle text-${item.badgeColor} rounded-pill w-auto mx-auto px-2 py-1">${item.badge}</span>
+          </div>
+        `;
+        grid.appendChild(col);
+      });
+    }
+
+    function applyFilters() {
+      const term = currentSearchTerm.toLowerCase();
+
+      const filtered = allCasesData.filter(item => {
+        const matchesCategory = (currentCategory === 'all') ||
+          item.category.includes(currentCategory) ||
+          item.keywords.includes(currentCategory) ||
+          (item.badge && item.badge.includes(currentCategory));
+
+        const matchesSearch = !term ||
+          item.title.toLowerCase().includes(term) ||
+          item.category.toLowerCase().includes(term) ||
+          item.keywords.some(k => k.toLowerCase().includes(term)) ||
+          (item.symptoms && item.symptoms.some(s => s.toLowerCase().includes(term)));
+
+        return matchesCategory && matchesSearch;
+      });
+
+      renderCases(filtered);
+    }
+
+    function setupCategoryEvents() {
+      const buttons = document.querySelectorAll('#categoryFilter .btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          buttons.forEach(b => {
+            b.classList.remove('btn-danger', 'active');
+            b.classList.add('btn-outline-danger');
+          });
+          this.classList.remove('btn-outline-danger');
+          this.classList.add('btn-danger', 'active');
+          currentCategory = this.getAttribute('data-category');
+          applyFilters();
+        });
+      });
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      currentSearchTerm = e.target.value.trim();
+      applyFilters();
+    });
+
+    function showDetails(id) {
+      const item = allCasesData.find(c => c.id === id);
+      if (!item) return;
+
+      activeCase = item;
+      document.getElementById('modalTitle').innerText = item.title;
+
+      let htmlContent = `
+        <div class="mb-3">
+          <h6 class="fw-bold text-secondary small"><i class="bi bi-activity me-1"></i> الأعراض والعلامات:</h6>
+          <ul class="list-group list-group-flush ps-0 small">
+            ${item.symptoms.map(s => `<li class="list-group-item bg-transparent py-1 border-0"><i class="bi bi-dot me-1"></i>${s}</li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="mb-3">
+          <h6 class="fw-bold text-success small"><i class="bi bi-check-circle-fill me-1"></i> خطوات الإسعاف الأولية:</h6>
+          <ol class="list-group list-group-numbered small">
+            ${item.steps.map(step => `<li class="list-group-item border-0 bg-body-tertiary mb-1 rounded py-1">${step}</li>`).join('')}
+          </ol>
+        </div>
+
+        <div class="alert alert-danger mb-0 rounded-3 py-2 small">
+          <h6 class="fw-bold mb-1 small"><i class="bi bi-x-circle-fill me-1"></i> تحذيرات وأخطاء شائعة تجنبها:</h6>
+          <ul class="mb-0 ps-3">
+            ${item.donts.map(dont => `<li>${dont}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+
+      document.getElementById('modalBody').innerHTML = htmlContent;
+      modal.show();
+    }
+
+    function buildShareText(item) {
+  let stepsText = item.steps.map((step, idx) => `${idx + 1}. ${step}`).join('\n');
+  let dontsText = item.donts.map(dont => `• ${dont}`).join('\n');
+
+  return `🚨 *إرشادات دفاع مدني طارئة: ${item.title}*\n\n` +
+         `📋 *إجراءات السلامة:* \n${stepsText}\n\n` +
+         `⚠️ *تحذيرات مهمة:* \n${dontsText}\n\n` +
+         `📞 لطوارئ الدفاع المدني اتصل فوراً بـ: *102*\n` +
+         `🔗 تم الإرسال من دليل طوارئ الدفاع المدني`;
+}
+
+    async function shareCurrentCase() {
+      if (!activeCase) return;
+      const shareData = {
+        title: activeCase.title,
+        text: buildShareText(activeCase),
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+        } catch (err) {
+          if (err.name !== 'AbortError') console.error('خطأ للمشاركة:', err);
+        }
+      } else {
+        shareToWhatsAppDirect();
+      }
+    }
+
+    function shareToWhatsAppDirect() {
+      if (!activeCase) return;
+      const text = buildShareText(activeCase);
+      const encodedText = encodeURIComponent(text);
+      window.open(`https://api.whatsapp.com/send?text=${encodedText}`, '_blank');
+    }
+    // ==================== إدارة تثبيت التطبيق (PWA Install Prompt) ====================
+let deferredPrompt;
+const installAppBtn = document.getElementById('installAppBtn');
+
+// 1. الاستماع لحدث جاهزية التثبيت من المتصفح
+window.addEventListener('beforeinstallprompt', (e) => {
+  // منع إظهار شريط المتصفح الافتراضي
+  e.preventDefault();
+  // حفظ الحدث لاستدعائه عند النقر
+  deferredPrompt = e;
+  // إظهار زر التثبيت في الواجهة
+  installAppBtn.classList.remove('d-none');
+});
+
+// 2. عند نقر المستخدم على زر التثبيت
+installAppBtn.addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+
+  // إظهار نافذة التثبيت الرسمية الخاصة بنظام التشغيل/المتصفح
+  deferredPrompt.prompt();
+
+  // انتظار خيار المستخدم (موافقة أو إلغاء)
+  const { outcome } = await deferredPrompt.userChoice;
+  console.log(`قرار المستخدم للتثبيت: ${outcome}`);
+
+  // إعادة ضبط المتغير وإخفاء الزر
+  deferredPrompt = null;
+  installAppBtn.classList.add('d-none');
+});
+
+// 3. إخفاء الزر فور إتمام التثبيت بنجاح
+window.addEventListener('appinstalled', () => {
+  console.log('تم تثبيت تطبيق الإسعافات بنجاح!');
+  installAppBtn.classList.add('d-none');
+  deferredPrompt = null;
+});
+  </script>
+</body>
+</html>

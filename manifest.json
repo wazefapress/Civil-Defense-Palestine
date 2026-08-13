@@ -1,0 +1,26 @@
+{
+"name": "دليل طوارئ وإرشادات الدفاع المدني 102",
+  "short_name": "الدفاع المدني",
+  "description": "دليل تفاعلي وسريع لإرشادات السلامة وطوارئ الدفاع المدني (الحرائق، تسرب الغاز، احتجاز المصاعد، والسيول) يعمل بدون إنترنت.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#dc3545",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon300.png",
+      "sizes": "300x300",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
